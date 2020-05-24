@@ -1,4 +1,4 @@
-package org.yan.practice.patterns.behavioral.chain;
+package org.yan.practice.patterns.behavioral.chain.middleware;
 
 /**
  * @author pangyan
