@@ -34,7 +34,7 @@ public class Process {
                 }
             }
 
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.MILLISECONDS.sleep(200);
             count++;
         }
     }

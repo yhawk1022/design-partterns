@@ -1,6 +1,7 @@
 package org.yan.practice.patterns.behavioral.mymonitor;
 
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -19,7 +20,7 @@ public class Main {
         eventManager.addListener("say", str-> System.out.println(str));
 
         Process process = new Process(eventManager);
-        Executor executor = Executors.newScheduledThreadPool(10);
+        ExecutorService executor = Executors.newScheduledThreadPool(10);
         executor.execute(()->{
             try {
                 process.count();
@@ -30,5 +31,8 @@ public class Main {
         executor.execute(()->{
             process.sayHello();
         });
+
+        //不写shutdown 父线程不会关闭
+        executor.shutdown();
     }
 }
