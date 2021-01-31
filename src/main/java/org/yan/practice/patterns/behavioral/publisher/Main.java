@@ -1,5 +1,7 @@
 package org.yan.practice.patterns.behavioral.publisher;
 
+import java.util.Observable;
+import java.util.Observer;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
@@ -14,6 +16,8 @@ public class Main {
         editor.events.subscribe("save", new EmailNotificationListener("admin@example.com"));
         try {
             editor.openFile("test.txt");
+//            Observable observable;
+//            Observer observer;
             editor.saveFile();
         } catch (Exception e) {
             e.printStackTrace();
